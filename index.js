@@ -2,6 +2,10 @@ const request = require('request');
 const promisify = require('fying-promises');
 
 const card = require('./lib/card');
+const account = require('./lib/account');
+const customer = require('./lib/customer');
+const loan = require('./lib/loan');
+const digitalAccount = require('./lib/digital-account');
 
 const post = promisify(request.post.bind(request));
 const get = promisify(request.get.bind(request));
@@ -41,129 +45,9 @@ module.exports = {
         }
     })
         .then(([ { body } ]) => body),
-    digitalAccount: {
-        create: (account, token, digitalAccountsOtp) => post({
-            baseUrl: 'https://apis.bbvabancomer.com/accounts/v1',
-            uri: '/accounts',
-            headers: {
-                'Authorization': `jwt ${ token }`,
-                'Content-Type': 'application/json',
-                'digitalAccounts-otp': digitalAccountsOtp,
-                'Accept': 'application/json'
-
-            },
-            json: account
-        })
-            .then(([ { body } ]) => body)
-    },
-
-    loan: {
-        create: (vehicle, token) => post({
-            baseUrl: 'https://apis.bbvabancomer.com/loans/v1',
-            uri: '/vehicles',
-            headers: {
-                'Authorization': `jwt ${ token }`,
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-
-            },
-            json: vehicle
-        })
-            .then(([ { body } ]) => body)
-    },
-    customer:{
-        getMeBasic:(token) => get({
-            baseUrl: 'https://apis.bbva.com/customers/v1',
-            uri: '/me-basic',
-            headers: {
-                'Authorization': `jwt ${ token }`,
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            }
-        })
-            .then(([ { body } ]) => body),
-        getMeFull:(token) => get({
-            baseUrl: 'https://apis.bbva.com/customers/v1',
-            uri: '/me-full',
-            headers: {
-                'Authorization': `jwt ${ token }`,
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            }
-        })
-            .then(([ { body } ]) => body),
-        getContractsBasic:(token) => get({
-            baseUrl: 'https://apis.bbva.com/customers/v1',
-            uri: '/me/globalposition-basic',
-            headers: {
-                'Authorization': `jwt ${ token }`,
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            }
-        })
-            .then(([ { body } ]) => body),
-        getContractsFull:(token) => get({
-            baseUrl: 'https://apis.bbva.com/customers/v1',
-            uri: '/me/globalposition-full',
-            headers: {
-                'Authorization': `jwt ${ token }`,
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            }
-        })
-            .then(([ { body } ]) => body),
-        getSpanishDni:(token) => get({
-            baseUrl: 'https://apis.bbva.com/customers/v1',
-            uri: '/me/documents/dni',
-            headers: {
-                'Authorization': `jwt ${ token }`,
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            }
-        })
-            .then(([ { body } ]) => body),
-        getDniMetadata:(token) => get({
-            baseUrl: 'https://apis.bbva.com/customers/v1',
-            uri: '/me/documents/dni-meta',
-            headers: {
-                'Authorization': `jwt ${ token }`,
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            }
-        })
-            .then(([ { body } ]) => body)
-    },
-    account: {
-        getMeAccount:(token) => get({
-            baseUrl: 'https://apis.bbva.com/accounts/v1',
-            uri: '/me/accounts',
-            headers: {
-                'Authorization': `jwt ${ token }`,
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            }
-        })
-            .then(([ { body } ]) => body),
-        getAccountDetails:(token, accountid) => get({
-            baseUrl: 'https://apis.bbva.com/accounts/v1',
-            uri: `/me/accounts${accountid ? `/${accountid}` : ''}`,
-            headers: {
-                'Authorization': `jwt ${ token }`,
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            }
-        })
-            .then(([ { body } ]) => body),
-        getAccountTransactions:(token, accountid) => get({
-            baseUrl: 'https://apis.bbva.com/accounts/v1',
-            uri: `/me/accounts${accountid ? `/${accountid}` : ''}/transactions`,
-            headers: {
-                'Authorization': `jwt ${ token }`,
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            }
-        })
-            .then(([ { body } ]) => body)
-    },
+    digitalAccount: {...digitalAccount},
+    loan: {...loan},
+    customer:{...customer},
+    account: {...account},
     card: {...card}
 };
