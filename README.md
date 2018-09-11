@@ -15,7 +15,6 @@ export a object
 ```js
 {
     auth(appID = '', secretOAuth) => Promise,
-
     authThreeLegged(code = '', redirect_uri) => Promise,
     digitalAccount: {
         create(account, token, digitalAccountsOtp) => Promise
@@ -23,6 +22,24 @@ export a object
 
     loan: {
         create(vehicle, token, digitalAccountsOtp) => Promise
+    },
+    customer:{
+        getMeBasic(token) => Promise,
+        getMeFull(token) => Promise,
+        getContractsBasic(token) => Promise,
+        getContractsFull(token) => Promise,
+        getSpanishDni(token) => Promise,
+        getDniMetadata(token) => Promise
+    },
+    account: {
+        getMeAccount(token) => Promise,
+        getAccountDetails(token, accountid) => Promise,
+        getAccountTransactions(token, accountid) => Promise
+    },
+    card: {
+        getMeCard(token) => Promise,
+        getMeCardDetails(token, cardId) => Promise,
+        getCardTransactions(token, cardId) => Promise
     }
 }
 
