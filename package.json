@@ -1,0 +1,24 @@
+{
+  "name": "bbvaapimarket",
+  "version": "1.0.0",
+  "description": "bbvaapimarket api client",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test --exit --timeout 6000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cereceres/bbvaapimarket.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cereceres/bbvaapimarket/issues"
+  },
+  "homepage": "https://github.com/Cereceres/bbvaapimarket#readme",
+  "dependencies": {
+    "fying-promises": "^1.0.1",
+    "request": "^2.88.0"
+  }
+}
