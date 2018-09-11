@@ -1,7 +1,7 @@
 {
   "name": "bbvaapimarket",
-  "version": "1.0.0",
-  "description": "bbvaapimarket api client",
+  "version": "1.0.1",
+  "description": "bbvaapimarket  client",
   "main": "index.js",
   "scripts": {
     "test": "mocha test --exit --timeout 6000"
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/Cereceres/bbvaapimarket.git"
   },
-  "keywords": [],
+  "keywords": ["bbva", "api", "bancomer", "bank", "banco", "rest", "market"],
   "author": "",
   "license": "ISC",
   "bugs": {
