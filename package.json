@@ -3,8 +3,9 @@
   "version": "1.0.2",
   "description": "bbvaapimarket  client",
   "main": "index.js",
+  "engines" : { "node" : ">=6" },
   "scripts": {
-    "test": "mocha test --exit --timeout 6000"
+    "test": "mocha test --exit --timeout 60000"
   },
   "repository": {
     "type": "git",
