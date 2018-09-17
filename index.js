@@ -6,9 +6,9 @@ const account = require('./lib/account');
 const customer = require('./lib/customer');
 const loan = require('./lib/loan');
 const digitalAccount = require('./lib/digital-account');
+const payment = require('./lib/payment');
 
 const post = promisify(request.post.bind(request));
-const get = promisify(request.get.bind(request));
 
 const base64 = (string) => Buffer.from(string).toString('base64');
 
@@ -45,9 +45,10 @@ module.exports = {
         }
     })
         .then(([ { body } ]) => body),
-    digitalAccount: {...digitalAccount},
-    loan: {...loan},
-    customer:{...customer},
-    account: {...account},
-    card: {...card}
+    digitalAccount,
+    loan,
+    customer,
+    account,
+    card,
+    payment
 };

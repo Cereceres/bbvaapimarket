@@ -40,6 +40,17 @@ export a object
         getMeCard(token) => Promise,
         getMeCardDetails(token, cardId) => Promise,
         getCardTransactions(token, cardId) => Promise
+    },
+    payment:{
+        createMeInternalTransfer(transfer, token) => Promise,
+        createMeTransfer(transfer, token) => Promise,
+        getMeTransfers(qs, token) => Promise,
+        createMeTransferSimulation(transfer, token) => Promise,
+        createMeTransferOrders(order, token) => Promise,
+        getMeTransferOrders(qs, token) => Promise,
+        deleteMeTransferOrders(transferorderid, token) => Promise,
+        createMobileCash(cash, token) => Promise,
+        getAtms(qs, token) => Promise
     }
 }
 
