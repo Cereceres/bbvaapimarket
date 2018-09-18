@@ -19,9 +19,10 @@ export a object
     digitalAccount: {
         create(account, token, digitalAccountsOtp) => Promise
     },
-
     loan: {
-        create(vehicle, token, digitalAccountsOtp) => Promise
+        create(vehicle, token, digitalAccountsOtp) => Promise,
+        getPreApproved(token) => Promise,
+        createPreApprovedSimulation(simulation, token) => Promise
     },
     customer:{
         getMeBasic(token) => Promise,
