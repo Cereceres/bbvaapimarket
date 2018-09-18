@@ -44,13 +44,13 @@ export a object
     payment:{
         createMeInternalTransfer(transfer, token) => Promise,
         createMeTransfer(transfer, token) => Promise,
-        getMeTransfers(qs, token) => Promise,
+        getMeTransfers(queryObject, token) => Promise,
         createMeTransferSimulation(transfer, token) => Promise,
         createMeTransferOrders(order, token) => Promise,
-        getMeTransferOrders(qs, token) => Promise,
+        getMeTransferOrders(queryObject, token) => Promise,
         deleteMeTransferOrders(transferorderid, token) => Promise,
         createMobileCash(cash, token) => Promise,
-        getAtms(qs, token) => Promise
+        getAtms(queryObject, token) => Promise
     }
 }
 

@@ -1,6 +1,6 @@
 {
   "name": "bbvaapimarket",
-  "version": "1.0.4",
+  "version": "1.0.7",
   "description": "bbvaapimarket  client",
   "main": "index.js",
   "engines" : {
