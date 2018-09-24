@@ -21,26 +21,26 @@ export a object
     },
     loan: {
         create(vehicle, token, digitalAccountsOtp) => Promise,
-        getPreApproved(token) => Promise,
+        getPreApproved(token = process.env.BBVA_TOKEN) => Promise,
         createPreApprovedSimulation(simulation, token) => Promise
     },
     customer:{
-        getMeBasic(token) => Promise,
-        getMeFull(token) => Promise,
-        getContractsBasic(token) => Promise,
-        getContractsFull(token) => Promise,
-        getSpanishDni(token) => Promise,
-        getDniMetadata(token) => Promise
+        getMeBasic(token = process.env.BBVA_TOKEN) => Promise,
+        getMeFull(token = process.env.BBVA_TOKEN) => Promise,
+        getContractsBasic(token = process.env.BBVA_TOKEN) => Promise,
+        getContractsFull(token = process.env.BBVA_TOKEN) => Promise,
+        getSpanishDni(token = process.env.BBVA_TOKEN) => Promise,
+        getDniMetadata(token = process.env.BBVA_TOKEN) => Promise
     },
     account: {
-        getMeAccount(token) => Promise,
-        getAccountDetails(token, accountid) => Promise,
-        getAccountTransactions(token, accountid) => Promise
+        getMeAccount(token = process.env.BBVA_TOKEN) => Promise,
+        getAccountDetails(token = process.env.BBVA_TOKEN, accountid) => Promise,
+        getAccountTransactions(token = process.env.BBVA_TOKEN, accountid) => Promise
     },
     card: {
-        getMeCard(token) => Promise,
-        getMeCardDetails(token, cardId) => Promise,
-        getCardTransactions(token, cardId) => Promise
+        getMeCard(token = process.env.BBVA_TOKEN) => Promise,
+        getMeCardDetails(token = process.env.BBVA_TOKEN, cardId) => Promise,
+        getCardTransactions(token = process.env.BBVA_TOKEN, cardId) => Promise
     },
     payment:{
         createMeInternalTransfer(transfer, token) => Promise,
